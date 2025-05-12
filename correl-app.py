@@ -14,6 +14,22 @@ st.write("")
 # Sidebar inputs
 with st.sidebar:
     st.title('⚙️ Parameters.')
+
+    logo_size = 24  # Change this value to adjust size
+
+    st.markdown(
+        f"""
+        <a href="https://www.linkedin.com/in/louisracaud" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="{logo_size}" style="vertical-align:middle; margin-right:10px;">
+            <span style="font-weight:bold; font-size:16px;">Louis Racaud</span>
+        </a>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.write('')
+    st.write('')
+
     tickers_input = st.text_input("Enter tickers separated by commas (e.g., AAPL, AMZN, NVDA)", value="AAPL,AMZN,NVDA")
     ticker = [t.strip().upper() for t in tickers_input.split(',') if t.strip()]
     start_date = st.date_input("Choose your start date", value=date(2024, 1, 1))
@@ -64,3 +80,19 @@ if not maindf.empty:
 
         csv = edited_df.to_csv(index=False).encode('utf-8')
         st.download_button("📥 Download CSV", data=csv, file_name="edited_data.csv", mime="text/csv")
+
+
+st.write("")
+st.write("")
+
+logo_size2 = 24  # Change this value to adjust size
+
+st.markdown(
+    f"""
+    <a href="https://www.linkedin.com/in/louisracaud" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="{logo_size2}" style="vertical-align:middle; margin-right:10px;">
+        <span style="font-weight:bold; font-size:16px;">Louis Racaud</span>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
